@@ -7,6 +7,7 @@ import springDemo.fortuneService.FortuneService;
 @Component
 public class TennisCoach implements Coach{
 
+    @Autowired
     private FortuneService fortuneService;
 
     // Define a default constructor
@@ -14,11 +15,11 @@ public class TennisCoach implements Coach{
 
     }
 
-    // Define any method for dependency injection
-    @Autowired
-    public void doSomeStuff(FortuneService theFortuneService) {
-        fortuneService = theFortuneService;
-    }
+//    // Define any method for dependency injection
+//    @Autowired
+//    public void doSomeStuff(FortuneService theFortuneService) {
+//        fortuneService = theFortuneService;
+//    }
 
 //    @Autowired
 //    public TennisCoach(FortuneService theFortuneService) {
