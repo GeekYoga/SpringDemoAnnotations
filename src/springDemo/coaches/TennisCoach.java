@@ -14,9 +14,9 @@ public class TennisCoach implements Coach{
 
     }
 
-    // Define a setter method
+    // Define any method for dependency injection
     @Autowired
-    public void setFortuneService(FortuneService theFortuneService) {
+    public void doSomeStuff(FortuneService theFortuneService) {
         fortuneService = theFortuneService;
     }
 
