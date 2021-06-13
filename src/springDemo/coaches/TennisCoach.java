@@ -6,8 +6,10 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import springDemo.fortuneService.FortuneService;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 @Component
-@Scope("prototype")
 public class TennisCoach implements Coach{
 
     @Autowired
@@ -17,6 +19,18 @@ public class TennisCoach implements Coach{
     // Define a default constructor
     public TennisCoach() {
 
+    }
+
+    // define my init method
+    @PostConstruct
+    public void doMyStartUpStuff() {
+        System.out.println("TennisCoach: inside of doMyStartUpStuff");
+    }
+
+    // define my init method
+    @PreDestroy
+    public void doMyCleanUpStuff() {
+        System.out.println("TennisCoach: inside of doMyCleanUpStuff");
     }
 
 //    // Define any method for dependency injection

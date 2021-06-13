@@ -2,6 +2,7 @@ package springDemo.fortuneService;
 
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -22,10 +23,18 @@ public class FileFortuneService implements FortuneService{
 
 	public FileFortuneService() {
 
-		File theFile = new File(fileName);
+		System.out.println(">> FileFortuneService: inside default constructor");
 
+	}
+
+	@PostConstruct
+	private void loadFortunesFile () {
+		System.out.println("Inside method loadFortuneFile()");
+
+		File theFile = new File(fileName);
 		System.out.println("Reading fortunes from file: " + theFile);
 		System.out.println("File exists: " + theFile.exists());
+
 
 		// read fortunes from file
 		try (BufferedReader br = new BufferedReader(
